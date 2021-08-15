@@ -1,0 +1,24 @@
+<h1>Componente pai</h1>
+<hr>
+<h2>Angular: Interação entre componentes</h2>
+<hr>
+<h3>Interceptando e mudando propriedades input usando um setter</h3>
+<app-filho *ngFor="let nome of nomes" [nome]="nome"></app-filho>
+
+<hr>
+<h3>Interceptando e mudando propriedades input usando o ngOnChanges() | Escutando eventos do componente filho</h3>
+<app-filho-paises 
+  *ngFor="let pais of paises"
+  [pais]="pais"
+  (votado)="onVoted($event)"></app-filho-paises>
+  <p>Você votou em: {{ votado }}</p>
+
+<hr>
+<h3>Interagindo com o componente filho através de variáveis locais</h3>
+<app-filho-var-local #filho></app-filho-var-local>
+<p>{{ filho.nome }}</p>
+
+<hr>
+<h3>Injeção de componentes com o decorator @ViewChild</h3>
+<app-filho-view-child></app-filho-view-child>
+<p>{{ nome }}</p>

@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <button (click)="listarTodosUsers()">GET</button>
+    <button (click)="listarUserPorId()">GET /id</button>
+    <button (click)="adicionarUser()">POST</button>
+    <button (click)="alterarUser()">PUT</button>
+    <button (click)="excluirUser(1)">DELETE</button>
+  </div>
+  <br>
+  <table style="width:100%">
+    <tr>
+      <th>id</th>
+      <th>nome</th> 
+      <th>username</th>
+      <th>email</th>
+      <th>acao</th>
+    </tr>
+    <tr *ngFor="let user of usersLists">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button (click)="excluirUser(user.id)">del</button>
+
+      </td>
+    </tr>
+  </table>
+  
+</div>
